@@ -9,7 +9,7 @@ categories: php symfony
 At my work, I tend to build a lot of connections with external services. This
 often includes situations where data needs to be synchronized between my application
 and a third party service periodically. In order to do this, I usually write
-[Symfony Commands][_command] that can be executes manually or through a cronjob.
+[Symfony Commands][_command] that can be executed manually or through a cronjob.
 
 At first, this is one class that extends [Symfony's Command class][_command_class]
 and contains _all_ the code needed to perform the task inside the `execute()` method.
