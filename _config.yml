@@ -24,7 +24,7 @@ github_username:  timobakx
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-cayman-blog
 plugins:
   - jekyll-feed
 
