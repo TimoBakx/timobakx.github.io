@@ -21,6 +21,7 @@ The theme used is [Cayman Blog][_theme].
 [_php]: https://www.php.net/
 [_symfony]: https://symfony.com/
 [_apiplatform]: https://api-platform.com/
+[_linku]: https://linku.nl/
 [_github_pages]: https://pages.github.com/
 [_jekyll]: https://github.com/jekyll/jekyll
 [_theme]: https://github.com/lorepirri/cayman-blog
