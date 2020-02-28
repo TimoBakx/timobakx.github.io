@@ -109,8 +109,8 @@ the `Synchronizer`. The first version of the `Feedback` class I made took a
 `SymfonyStyle` object in the constructor and used that to format the CLI output
 nicely.
 
-Because the `$feedback` variable could be null (when called from/used from a controller
-or event listener), it means the `synchronize` method has to do a lot of null checks:
+Because the `$feedback` variable could be null (when called from a controller or
+event listener), it means the `synchronize` method has to do a lot of null checks:
 
 ```php
 use App\Feedback\Feedback;
@@ -211,20 +211,20 @@ final class Synchronizer
 ```
 
 ## Using it yourself
-Thanks to my bosses, I was allowed to share this way of handling output with
-the world, as [Linku][_linku] open sourced the Feedback package. To make sure
-that Feedback is also usable outside of Symfony projects, I split the code over
-two packages: [Linku/Feedback][_feedback_package] (with the interface and a
-few core implementations) and [Linku/Feedback-SymfonyStyle][_symfonystyle_package]
-(with a Symfony specific implementation).
+After receiving positive feedback from the community regarding the usefulness
+of this solution, I requested permission from my employer to open source it
+as a package and [Linku][_linku] has graciously agreed.
 
-The core implementations include a `ClosureFeedback` to use a custom closure for
-each of the methods, a `LoggerFeedback` that sends information to any [PSR-3 Logger][_psr3],
-and a `ChainedFeedback` that allows multiple `Feedback` implementations to be
-used at the same time.
+To make sure that `Feedback` is also usable outside of Symfony projects, I
+split the code over two packages: [Linku/Feedback][_feedback_package] (with
+the interface and a few core implementations) and [Linku/Feedback-SymfonyStyle][_symfonystyle_package]
+(with a Symfony specific implementation). The core implementations include a
+`ClosureFeedback` to use a custom closure for each of the methods, a `LoggerFeedback`
+that sends information to any [PSR-3 Logger][_psr3], and a `ChainedFeedback` that
+allows multiple `Feedback` implementations to be used at the same time.
 
-Feel free to try `Feedback` yourself. If you have any requests, questions or
-improvements, please open an issue or pull request in Github.
+Give `Feedback` a try. If you have any requests, questions or improvements, please
+open an issue or pull request in Github or reach out to me on Twitter.
 
 
 [_command]: https://symfony.com/doc/current/console.html
