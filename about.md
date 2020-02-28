@@ -23,5 +23,5 @@ The theme used is [Cayman Blog][_theme].
 [_apiplatform]: https://api-platform.com/
 [_linku]: https://linku.nl/
 [_github_pages]: https://pages.github.com/
-[_jekyll]: https://github.com/jekyll/jekyll
+[_jekyll]: https://jekyllrb.com/
 [_theme]: https://github.com/lorepirri/cayman-blog
