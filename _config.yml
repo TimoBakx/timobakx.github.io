@@ -16,7 +16,7 @@
 title: Timo Bakx
 email: timobakx@gmail.com
 description: >-
-    This is a blog about development in PHP, Symfony and random stuff.
+    This is a blog (mostly) about development in PHP and Symfony.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://timobakx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
