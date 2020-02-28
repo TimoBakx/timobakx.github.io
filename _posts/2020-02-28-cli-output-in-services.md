@@ -6,17 +6,17 @@ date:   2020-02-28 16:00:00 +0200
 categories: php symfony
 ---
 
-At my work, I tend to build a lot of connections with external services. This
-often includes situations where data needs to be synchronized between my application
-and a third party service periodically. In order to do this, I usually write
-[Symfony Commands][_command] that can be executed manually or through a cronjob.
+In the projects I work on I often need to build connections with external services.
+Often, these projects require periodical data synchronization between my application
+and the third party service. In order to do this, I usually write [Symfony Commands][_command]
+that can be executed manually or through a cronjob. Inside these commands, I
+send information back to the terminal to show the progress of the synchronisation.
 
-At first, this is one class that extends [Symfony's Command class][_command_class]
+To get things up and running, I put everything in a single [Symfony's Command class][_command_class]
 and contains _all_ the code needed to perform the task inside the `execute()` method.
 Because this is not a very [SOLID][_solid] approach, I then refactor code from
-this method into separate services and classes.
-
-I usually end up with a `Synchronizer` service that uses a `Repository` class
+this method into separate services and classes. I usually end up with a `Synchronizer`
+service that uses a `Repository` class
 to store data locally and a `Client` class to pull data from a remote source
 (or vice versa, depending on the requirements).
 
@@ -49,7 +49,7 @@ final class Synchronizer
 }
 ```
 
-And here we come to the problem at hand. How can we make sure that this `Synchronizer`
+And here we get to the core problem. How can we make sure that this `Synchronizer`
 service can still let the CLI know what it's doing (and how far it is in the process),
 without binding CLI output so much to the service, that it's unusable from any other
 access point (like controllers, event listeners etc)? 
@@ -57,8 +57,8 @@ access point (like controllers, event listeners etc)?
 ## First try, using callbacks
 At first, I tried adding closures to the `synchronize()` method of the `Synchronizer`.
 This, however, ended up quite cumbersome as the amount of parameters increased a
-lot, with a lot of code in the `Command`. Also, from the point of view of calling
-this method, it is entirely unclear what kind of parameters are expected in each closure.
+lot, with a lot of code in the `Command`. Also, when calling this method, it
+is quite unclear what kind of parameters are expected in each closure.
 
 ```php
 final class Synchronizer
