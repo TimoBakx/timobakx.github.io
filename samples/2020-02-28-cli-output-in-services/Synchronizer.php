@@ -50,7 +50,7 @@ final class Synchronizer
         $this->repository->store(...$products);
     }
 
-    public function synchronizeClosures(\Closure $info, \Closure $startProgress, \Closure $advanceProgress, \Closure $stopProgress): void
+    public function synchronizeClosures(\Closure $info, \Closure $startProcess, \Closure $advanceProcess, \Closure $stopProcess): void
     {
         $info('Starting synchronization');
 
@@ -59,7 +59,7 @@ final class Synchronizer
         $info(sprintf('Loaded %d products from remote source.', \count($data)));
         $products = [];
 
-        $startProgress(\count($data));
+        $startProcess(\count($data));
         foreach ($data as $row) {
             $externalID = $row['id'];
 
@@ -75,9 +75,9 @@ final class Synchronizer
 
             $products[] = $product;
 
-            $advanceProgress();
+            $advanceProcess();
         }
-        $stopProgress();
+        $stopProcess();
 
         $this->repository->store(...$products);
 
@@ -93,12 +93,12 @@ final class Synchronizer
         $data = $this->client->loadProducts();
 
         if ($feedback) {
-            $feedback->info(sprintf('Loaded %d products from remote source.', \count($data)));
+            $feedback->info(\sprintf('Loaded %d products from remote source.', \count($data)));
         }
         $products = [];
 
         if ($feedback) {
-            $feedback->startProgress(\count($data));
+            $feedback->startProcess(\count($data));
         }
         foreach ($data as $row) {
             $externalID = $row['id'];
@@ -116,11 +116,11 @@ final class Synchronizer
             $products[] = $product;
 
             if ($feedback) {
-                $feedback->advanceProgress();
+                $feedback->advanceProcess();
             }
         }
         if ($feedback) {
-            $feedback->stopProgress();
+            $feedback->stopProcess();
         }
 
         $this->repository->store(...$products);
@@ -143,7 +143,7 @@ final class Synchronizer
         $feedback->info(sprintf('Loaded %d products from remote source.', \count($data)));
         $products = [];
 
-        $feedback->startProgress(\count($data));
+        $feedback->startProcess(\count($data));
         foreach ($data as $row) {
             $externalID = $row['id'];
 
@@ -159,9 +159,9 @@ final class Synchronizer
 
             $products[] = $product;
 
-            $feedback->advanceProgress();
+            $feedback->advanceProcess();
         }
-        $feedback->stopProgress();
+        $feedback->stopProcess();
 
         $this->repository->store(...$products);
 
@@ -182,7 +182,7 @@ final class Synchronizer
         $this->feedback->info(sprintf('Loaded %d products from remote source.', \count($data)));
         $products = [];
 
-        $this->feedback->startProgress(\count($data));
+        $this->feedback->startProcess(\count($data));
         foreach ($data as $row) {
             $externalID = $row['id'];
 
@@ -198,9 +198,9 @@ final class Synchronizer
 
             $products[] = $product;
 
-            $this->feedback->advanceProgress();
+            $this->feedback->advanceProcess();
         }
-        $this->feedback->stopProgress();
+        $this->feedback->stopProcess();
 
         $this->repository->store(...$products);
 

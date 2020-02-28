@@ -9,15 +9,15 @@ final class NoFeedback implements Feedback
     {
     }
 
-    public function startProgress(int $total = 0): void
+    public function startProcess(int $total = 0): void
     {
     }
 
-    public function advanceProgress(int $steps = 1): void
+    public function advanceProcess(int $steps = 1): void
     {
     }
 
-    public function stopProgress(): void
+    public function stopProcess(): void
     {
     }
 }
