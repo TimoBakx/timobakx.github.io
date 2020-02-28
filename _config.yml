@@ -22,18 +22,22 @@ url: "https://timobakx.github.io" # the base hostname & protocol for your site, 
 twitter_username: timobakx
 github_username:  timobakx
 
+header_page_refs: ['about']
+
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman-blog
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - _site
+  - .idea
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
