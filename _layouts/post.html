@@ -19,6 +19,17 @@ layout: default
         {{ content }}
     </div>
 
+    {% if page.thanks %}
+    <div class="thanks">
+        Thanks for proofreading and improvements:
+        <ul>
+            {% for name in page.thanks %}
+                <li>{{ name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
     {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
     {% endif %}

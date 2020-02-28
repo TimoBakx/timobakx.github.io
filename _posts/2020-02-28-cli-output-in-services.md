@@ -5,6 +5,8 @@ tagline: "Can we output information without binding our service to the CLI?"
 date:   2020-02-28 16:00:00 +0200
 categories: php symfony
 excerpt: My path to showing optional CLI output in services and the creation of the Feedback package
+thanks:
+    - Iulia Stana
 ---
 
 In the projects I work on I often need to build connections with external services.
