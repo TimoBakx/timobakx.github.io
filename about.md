@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+ref: about
 permalink: /about/
 ---
 

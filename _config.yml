@@ -16,11 +16,16 @@
 title: Timo Bakx
 email: timobakx@gmail.com
 description: >-
-  This is a blog about development in PHP, Symfony and random stuff.
+    This is a blog about development in PHP, Symfony and random stuff.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://timobakx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: timobakx
-github_username:  timobakx
+
+github:
+    owner_name: Timo
+    owner_url: https://github.com/TimoBakx/
+    username: TimoBakx
+twitter:
+    username: TimoBakx
 
 header_page_refs: ['about']
 
@@ -28,16 +33,16 @@ header_page_refs: ['about']
 markdown: kramdown
 theme: jekyll-theme-cayman
 plugins:
-  - jekyll-feed
+    - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - _site
-  - .idea
+    - Gemfile
+    - Gemfile.lock
+    - _site
+    - .idea
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
