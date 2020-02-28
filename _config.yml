@@ -37,6 +37,9 @@ theme: "jekyll-theme-cayman"
 plugins:
     - "jekyll-feed"
 
+feed:
+    excerpt_only: true
+
 exclude:
     - Gemfile
     - Gemfile.lock
