@@ -7,10 +7,11 @@ categories: php symfony
 ---
 
 In the projects I work on I often need to build connections with external services.
-Often, these projects require periodical data synchronization between my application
-and the third party service. In order to do this, I usually write [Symfony Commands][_command]
-that can be executed manually or through a cronjob. Inside these commands, I
-send information back to the terminal to show the progress of the synchronisation.
+Most of the time, these projects require periodical data synchronization between
+my application and the third party service. In order to do this, I usually
+write [Symfony Commands][_command] that can be executed manually or through a
+cronjob. Inside these commands, I send information back to the terminal to show
+the progress of the synchronization so you can see that something is happening.
 
 To get things up and running, I put everything in a single [Symfony's Command class][_command_class]
 and contains _all_ the code needed to perform the task inside the `execute()` method.
