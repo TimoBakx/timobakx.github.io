@@ -9,6 +9,6 @@ final class ProductNotFound extends RuntimeException
 {
     public static function byExternalId(string $externalId): self
     {
-        return new self(sprintf('No product found with external ID "%s"', $externalId));
+        return new self(\sprintf('No product found with external ID "%s"', $externalId));
     }
 }

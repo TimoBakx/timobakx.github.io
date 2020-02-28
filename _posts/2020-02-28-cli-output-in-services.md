@@ -71,7 +71,7 @@ final class Synchronizer
 
         $data = $this->client->loadProducts();
 
-        $info(sprintf('Loaded %d products from remote source.', \count($data)));
+        $info(\sprintf('Loaded %d products from remote source.', \count($data)));
         $products = [];
 
         $startProcess(\count($data));
@@ -126,7 +126,7 @@ final class Synchronizer
         $data = $this->client->loadProducts();
 
         if ($feedback) {
-            $feedback->info(sprintf('Loaded %d products from remote source.', \count($data)));
+            $feedback->info(\sprintf('Loaded %d products from remote source.', \count($data)));
         }
         $products = [];
 
@@ -185,7 +185,7 @@ final class Synchronizer
 
         $data = $this->client->loadProducts();
 
-        $feedback->info(sprintf('Loaded %d products from remote source.', \count($data)));
+        $feedback->info(\sprintf('Loaded %d products from remote source.', \count($data)));
 
         /* ... */
     }
