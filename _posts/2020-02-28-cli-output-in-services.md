@@ -248,6 +248,9 @@ each of the methods, a `LoggerFeedback` that sends information to any [PSR-3 Log
 and a `ChainedFeedback` that allows multiple `Feedback` implementations to be
 used at the same time.
 
+Feel free to try `Feedback` yourself. If you have any requests, questions or
+improvements, please open an issue or pull request in Github.
+
 
 [_command]: https://symfony.com/doc/current/console.html
 [_command_class]: https://github.com/symfony/symfony/blob/5.0/src/Symfony/Component/Console/Command/Command.php
