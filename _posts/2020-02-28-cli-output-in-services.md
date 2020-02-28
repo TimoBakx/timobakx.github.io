@@ -4,6 +4,7 @@ title:  "CLI output in services"
 tagline: "Can we output information without binding our service to the CLI?"
 date:   2020-02-28 16:00:00 +0200
 categories: php symfony
+excerpt: My path to showing optional CLI output in services and the creation of the Feedback package
 ---
 
 In the projects I work on I often need to build connections with external services.
@@ -14,12 +15,11 @@ cronjob. Inside these commands, I send information back to the terminal to show
 the progress of the synchronization so you can see that something is happening.
 
 To get things up and running, I put everything in a single [Symfony's Command class][_command_class]
-and contains _all_ the code needed to perform the task inside the `execute()` method.
+that contains _all_ the code needed to perform the task inside the `execute()` method.
 Because this is not a very [SOLID][_solid] approach, I then refactor code from
 this method into separate services and classes. I usually end up with a `Synchronizer`
-service that uses a `Repository` class
-to store data locally and a `Client` class to pull data from a remote source
-(or vice versa, depending on the requirements).
+service that uses a `Repository` class to store data locally and a `Client` class
+to pull data from a remote source (or vice versa, depending on the requirements).
 
 ```php
 final class Synchronizer
