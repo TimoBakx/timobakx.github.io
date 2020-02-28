@@ -103,13 +103,14 @@ final class Synchronizer
 ```
 
 ## The Feedback Class
-A better way to do this is to wrap the functionality that's now handled inside
-the closures in a single class that can be used in the `Synchronizer`. The
-first version of the `Feedback` class I made took a `SymfonyStyle` object
-and used that to format the CLI output nicely.
+In order to avoid the [long parameter list code smell][_long_parameters_list],
+I wrapped the closure's functionality in a single class that can be used in
+the `Synchronizer`. The first version of the `Feedback` class I made took a
+`SymfonyStyle` object in the constructor and used that to format the CLI output
+nicely.
 
-Unfortunately, the code still had a lot of logic in case no `Feedback` instance 
-was passed to the method.
+Because the `$feedback` variable could be null (when called from/used from a controller
+or event listener), it means the `synchronize` method has to do a lot of null checks:
 
 ```php
 use App\Feedback\Feedback;
@@ -129,46 +130,19 @@ final class Synchronizer
         if ($feedback) {
             $feedback->info(\sprintf('Loaded %d products from remote source.', \count($data)));
         }
-        $products = [];
 
-        if ($feedback) {
-            $feedback->startProcess(\count($data));
-        }
-        foreach ($data as $row) {
-            $externalID = $row['id'];
-
-            try {
-                $product = $this->repository->getByExternalId($externalID);
-            } catch (ProductNotFound $exception) {
-                $product = new Product();
-                $product->setExternalId($externalID);
-            }
-
-            $product->setTitle($row['title']);
-            $product->setPrice((float)$row['price']);
-
-            if ($feedback) {
-                $feedback->advanceProcess();
-            }
-        }
-        if ($feedback) {
-            $feedback->stopProcess();
-        }
-
-        $this->repository->store(...$products);
-
-        if ($feedback) {
-            $feedback->info('Done synchronizing');
-        }
+        /* ... */
     }
 }
 ```
 
 ## The fallback: NoFeedback
 In order to not have to check for the existence of `$feedback` ever time you
-want to use it, I created a `NoFeedback` class. This class has all the same
-methods, but without any actual executing code. I renamed the `Feedback` class
-to `SymfonyStyleFeedback` so I can use `Feedback` as an interface.
+want to use it, I created the `NoFeedback` class as implementation of [the null object pattern][_null_object_pattern].
+This class has all the same methods, but without any actual executing code.
+
+To keep the namespace clean, I renamed the `Feedback` class to `SymfonyStyleFeedback`
+and reused `Feedback` to create an interface out of the previous class.
 
 ```php
 use App\Feedback\Feedback;
@@ -256,6 +230,8 @@ improvements, please open an issue or pull request in Github.
 [_command]: https://symfony.com/doc/current/console.html
 [_command_class]: https://github.com/symfony/symfony/blob/5.0/src/Symfony/Component/Console/Command/Command.php
 [_solid]: https://en.wikipedia.org/wiki/SOLID
+[_long_parameters_list]: https://blog.codinghorror.com/code-smells/
+[_null_object_pattern]: https://en.wikipedia.org/wiki/Null_object_pattern
 [_linku]: https://linku.nl/
 [_feedback_package]: https://packagist.org/packages/linku/feedback
 [_symfonystyle_package]: https://packagist.org/packages/linku/feedback-symfonystyle
