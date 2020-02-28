@@ -218,10 +218,12 @@ as a package and [Linku][_linku] has graciously agreed.
 To make sure that `Feedback` is also usable outside of Symfony projects, I
 split the code over two packages: [Linku/Feedback][_feedback_package] (with
 the interface and a few core implementations) and [Linku/Feedback-SymfonyStyle][_symfonystyle_package]
-(with a Symfony specific implementation). The core implementations include a
-`ClosureFeedback` to use a custom closure for each of the methods, a `LoggerFeedback`
-that sends information to any [PSR-3 Logger][_psr3], and a `ChainedFeedback` that
-allows multiple `Feedback` implementations to be used at the same time.
+(with a Symfony specific implementation).
+
+The core implementations includes:
+- `ClosureFeedback` to use a custom closure for each of the methods
+- `LoggerFeedback` to send information to any [PSR-3 Logger][_psr3]
+- `ChainedFeedback` to allow multiple `Feedback` implementations to be used at the same time
 
 Give `Feedback` a try. If you have any requests, questions or improvements, please
 open an issue or pull request in Github or reach out to me on Twitter.
