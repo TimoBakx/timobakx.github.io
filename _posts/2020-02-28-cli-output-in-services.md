@@ -107,7 +107,8 @@ the closures in a single class that can be used in the `Synchronizer`. The
 first version of the `Feedback` class I made took a `SymfonyStyle` object
 and used that to format the CLI output nicely.
 
-Unfortunately, the code still had a lot of logic in case no feedback was given.
+Unfortunately, the code still had a lot of logic in case no `Feedback` instance 
+was passed to the method.
 
 ```php
 use App\Feedback\Feedback;
