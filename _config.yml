@@ -43,6 +43,7 @@ exclude:
     - Gemfile.lock
     - _site
     - .idea
+    - samples
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
