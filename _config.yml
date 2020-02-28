@@ -13,31 +13,30 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Timo Bakx
-email: timobakx@gmail.com
-description: >-
-    This is a blog (mostly) about development in PHP and Symfony.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://timobakx.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+title: "Timo Bakx"
+email: "timobakx@gmail.com"
+description: "This is a blog (mostly) about development in PHP and Symfony."
+baseurl: ""
+url: "https://timobakx.dev"
 
 github:
-    owner_name: Timo
-    owner_url: https://github.com/TimoBakx/
-    username: TimoBakx
-twitter:
-    username: TimoBakx
+    username: "TimoBakx"
+    owner_name: "Timo"
+    owner_url: "https://github.com/TimoBakx/"
 
-header_page_refs: ['about']
+twitter:
+    username: "TimoBakx"
+
+header_page_refs:
+    - "about"
 
 # Build settings
-markdown: kramdown
-theme: jekyll-theme-cayman
+markdown: "kramdown"
+theme: "jekyll-theme-cayman"
 plugins:
-    - jekyll-feed
+    - "jekyll-feed"
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
     - Gemfile
     - Gemfile.lock
