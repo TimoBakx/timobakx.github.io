@@ -220,12 +220,12 @@ as a package and [Linku][_linku] has graciously agreed.
 
 To make sure that `Feedback` is also usable outside of Symfony projects, I
 split the code over two packages:
-1) The [Linku/Feedback package][_feedback_package] includes three readily usable
+1. The [Linku/Feedback package][_feedback_package] includes three readily usable
 implementations of `Feedback`:
     - `ClosureFeedback` to use a custom closure for each of the methods
     - `LoggerFeedback` to send information to any [PSR-3 Logger][_psr3]
     - `ChainedFeedback` to allow multiple `Feedback` implementations to be used at the same time
-1) The [Linku/Feedback-SymfonyStyle package][_symfonystyle_package] includes a single
+1. The [Linku/Feedback-SymfonyStyle package][_symfonystyle_package] includes a single
 implementation that uses `SymfonyStyle` to style output to the CLI.
 
 Give `Feedback` a try. If you have any requests, questions or improvements, please
