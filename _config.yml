@@ -46,6 +46,7 @@ exclude:
     - _site
     - .idea
     - samples
+    - bin
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
