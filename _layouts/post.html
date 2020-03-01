@@ -23,14 +23,24 @@ layout: default
     <div class="thanks">
         Thanks for proofreading and improvements:
         <ul>
-            {% for name in page.thanks %}
-                <li>{{ name }}</li>
+            {% for ref in page.thanks %}
+                {% assign person = site.people | where: "ref", ref | first %}
+
+                <li>
+                    {% if person.website %}
+                        <a href="{{ person.website }}">
+                            {{ person.fullName }}
+                        </a>
+                    {% else %}
+                        {{ person.fullName }}
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </div>
     {% endif %}
 
     {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
+        {% include disqus_comments.html %}
     {% endif %}
 </article>

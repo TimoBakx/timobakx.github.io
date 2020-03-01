@@ -6,16 +6,17 @@ date:   2020-02-28 16:00:00 +0200
 categories: php symfony
 excerpt: My path to showing optional CLI output in services and the creation of the Feedback package
 thanks:
-    - Iulia Stana
-    - Bart van Raaij
+    - iulia
+    - bart
+    - COil
 ---
 
 In the projects I work on I often need to build connections with external services.
 Most of the time, these projects require periodical data synchronization between
-my application and the third party service. In order to do this, I usually
-write [Symfony Commands][_command] that can be executed manually or through a
-cronjob. Inside these commands, I send information back to the terminal to show
-the progress of the synchronization so you can see that something is happening.
+my application and the third party service. To do this, I usually write [Symfony Commands][_command]
+that can be executed manually or through a cronjob. Inside these commands, I
+send information back to the terminal to show the progress of the synchronization
+so you can see that something is happening.
 
 To get things up and running, I put everything in a single [Symfony's Command class][_command_class]
 that contains _all_ the code needed to perform the task inside the `execute()` method.
@@ -106,11 +107,10 @@ final class Synchronizer
 ```
 
 ## The Feedback Class
-In order to avoid the [long parameter list code smell][_long_parameters_list],
-I wrapped the closure's functionality in a single class that can be used in
-the `Synchronizer`. The first version of the `Feedback` class I made took a
-`SymfonyStyle` object in the constructor and used that to format the CLI output
-nicely.
+To avoid the [long parameter list code smell][_long_parameters_list], I wrapped
+the closure's functionality in a single class that can be used in the `Synchronizer`.
+The first version of the `Feedback` class I made took a `SymfonyStyle` object in
+the constructor and used that to format the CLI output nicely.
 
 Because the `$feedback` variable could be null (when called from a controller or
 event listener), it means the `synchronize` method has to do a lot of null checks:
@@ -140,8 +140,8 @@ final class Synchronizer
 ```
 
 ## The fallback: NoFeedback
-In order to not have to check for the existence of `$feedback` ever time you
-want to use it, I created the `NoFeedback` class as implementation of [the null object pattern][_null_object_pattern].
+To not have to check for the existence of `$feedback` ever time you want to use
+it, I created the `NoFeedback` class as implementation of [the null object pattern][_null_object_pattern].
 This class has all the same methods, but without any actual executing code.
 
 To keep the namespace clean, I renamed the `Feedback` class to `SymfonyStyleFeedback`

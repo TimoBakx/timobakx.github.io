@@ -40,6 +40,14 @@ plugins:
 feed:
     excerpt_only: true
 
+people:
+    - ref: iulia
+      fullName: Iulia Stana
+    - ref: bart
+      fullName: Bart van Raaij
+    - ref: COil
+      fullName: COil
+
 exclude:
     - Gemfile
     - Gemfile.lock
