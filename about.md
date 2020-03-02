@@ -9,8 +9,8 @@ permalink: /about/
 I'm Timo Bakx, a webdeveloper specializing in building web applications using
 [PHP][_php], [Symfony][_symfony] and [API-Platform][_apiplatform].
 
-I currently work at [Linku][_linku] in Nijmegen, the Netherlands as a backend
-developer.
+I've been working with PHP since 2004 and currently work at [Linku][_linku] in Nijmegen,
+the Netherlands as a backend developer.
 
 # About this site
 
