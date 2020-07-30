@@ -2,7 +2,7 @@
 layout: post
 title:  "Using Symfony's service iterators for secondary flows"
 tagline: "Can we decouple flows without using the EventDispatcher?"
-date:   2020-07-29 14:00:00 +0200
+date:   2020-07-30 08:45:00 +0200
 categories: php symfony
 excerpt: My attempt to decouple secondary flows of a process without using the event system
 thanks:
