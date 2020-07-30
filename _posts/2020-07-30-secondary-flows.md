@@ -197,8 +197,10 @@ final class Register
         $this->entityManager->persist($user);
         $this->entityManager->flush();
 
-        foreach ($this->secondaryFlows as $flow) {
-            $flow->afterUserRegistrationSuccessful($user);
+        foreach ($this->secondaryFlows as $flow) { 
+            if ($flow instanceof AfterUserRegistration) {
+                $flow->afterUserRegistrationSuccessful($user);
+            }
         }
 
         // Create a response
