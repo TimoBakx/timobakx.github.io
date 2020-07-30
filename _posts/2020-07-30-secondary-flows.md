@@ -9,6 +9,7 @@ thanks:
     - iulia
     - bart
     - robin
+    - COil
 ---
 
 Say you're building an application that has users. Those users can register themselves.
@@ -20,8 +21,8 @@ successful.
 ## Step 1: Everything in one spot
 At first, I usually put everything that needs to happen into the controller. This
 way, I can verify that everything works as intended and I always have a working
-solution to fall back to if my refactoring breaks something. The end result usually
-ends up a little like this:
+solution to fall back to if my refactoring breaks something. The result usually ends
+up a little like this:
 
 ```php
 <?php
