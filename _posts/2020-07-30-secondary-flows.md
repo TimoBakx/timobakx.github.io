@@ -7,6 +7,8 @@ categories: php symfony
 excerpt: My attempt to decouple secondary flows of a process without using the event system
 thanks:
     - iulia
+    - bart
+    - robin
 ---
 
 Say you're building an application that has users. Those users can register themselves.

@@ -45,6 +45,9 @@ people:
       fullName: Iulia Stana
     - ref: bart
       fullName: Bart van Raaij
+    - ref: robin
+      fullName: Robin Keet
+      website: https://keet.me
     - ref: COil
       fullName: COil
 
