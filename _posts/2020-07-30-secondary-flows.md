@@ -18,7 +18,7 @@ successful.
 ## Step 1: Everything in one spot
 At first, I usually put everything that needs to happen into the controller. This
 way, I can verify that everything works as intended and I always have a working
-sollution to fall back to if my refactoring breaks something. The end result usually
+solution to fall back to if my refactoring breaks something. The end result usually
 ends up a little like this:
 
 ```php
@@ -226,9 +226,9 @@ services:
 
 ## Why I'm not using the Event system
 Although I think that the [Symfony Event system][_events] is great for inter-package communication
-or to hook into the flow of other bundles, I find that using it within the boundries
+or to hook into the flow of other bundles, I find that using it within the boundaries
 of a single application usually obfuscates the flow and structure of my code. It
-adds an extra layer and makes it harder figure out what exactly happens at a
+adds an extra layer and makes it harder to figure out what exactly happens at a
 given time.
 
 The method described above will decouple primary and secondary flows, while still
