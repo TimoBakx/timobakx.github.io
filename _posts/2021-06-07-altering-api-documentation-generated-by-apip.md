@@ -19,7 +19,7 @@ explore some examples of changed API documentation and explain how I made these 
 
 ## Using the API Platform resource configuration
 I write the configuration for API Platform resources in YAML. This can also be done using annotations in your Symfony Entities
-or DTO's. Either way work fine, this is  just a matter of preference. In these examples, I use my YAML configuration.
+or DTO's. Either way works fine, this is  just a matter of preference. In these examples, I use my YAML configuration.
 These examples are made for the OpenAPI variation of the documentation. If you're using Swagger, there are [some differences](#converting-these-examples-to-swagger)
 to be aware of.
 
