@@ -373,7 +373,7 @@ using Swagger instead of OpenAPI.
 - If you're defining custom responses, remove the `content: application/json:` layers between the status code and `schema`
   (`schema:` should be at the same level as `description:`).
 
-### Documenation Normalizer Decorators
+### Documentation Normalizer Decorators
 - Decorate `'api_platform.swagger.normalizer.api_gateway'` instead of `'api_platform.openapi.normalizer.api_gateway'`.
 - Use `['definitions']` instead of `['components']['schemas']`.
 - In `['paths'][$path][$method]`, add `'produces' => ['application/json']`.
