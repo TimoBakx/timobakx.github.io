@@ -99,7 +99,7 @@ resources:
                 method: 'GET'
                 path: '/tasks/summary'
                 controller: 'App\Task\TasksSummary'
-                opendoc_context:
+                openapi_context:
                     summary: 'Get a summary of task counts per timespan'
                     description: 'Get a summary of task counts per timespan'
                     parameters:
@@ -371,7 +371,7 @@ configurations to the newer OpenAPI documentation method. With these changes, an
 using Swagger instead of OpenAPI.
 
 ### Resource configuration
-- Replace `opendoc_context` with `swagger_context`. 
+- Replace `openapi_context` with `swagger_context`. 
 - If you're defining custom responses, remove the `content: application/json:` layers between the status code and `schema`
   (`schema:` should be at the same level as `description:`).
 
