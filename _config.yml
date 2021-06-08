@@ -50,6 +50,9 @@ people:
       website: https://keet.me
     - ref: COil
       fullName: COil
+    - ref: alan_poulain
+      fullName: Alan Poulain
+      website: https://github.com/alanpoulain
 
 exclude:
     - Gemfile
