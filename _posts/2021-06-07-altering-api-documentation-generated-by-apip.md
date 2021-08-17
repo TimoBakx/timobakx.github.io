@@ -115,14 +115,16 @@ resources:
                     responses:
                         200:
                             description: 'Task summary response'
-                            schema:
-                                type: 'object'
-                                properties:
-                                    all: {type: 'integer'}
-                                    today: {type: 'integer'}
-                                    nextSevenDays: {type: 'integer'}
-                                    overdue: {type: 'integer'}
-                                    done: {type: 'integer'}
+                            content:
+                                application/json:
+                                    schema:
+                                        type: 'object'
+                                        properties:
+                                            all: {type: 'integer'}
+                                            today: {type: 'integer'}
+                                            nextSevenDays: {type: 'integer'}
+                                            overdue: {type: 'integer'}
+                                            done: {type: 'integer'}
 ```
 
 ## Decorating the API Platform Documentation Normalizer
