@@ -28,6 +28,9 @@ github:
 twitter:
     username: "TimoBakx"
 
+mastodon:
+    uri: "https://phpc.social/@timobakx"
+
 header_page_refs:
     - "about"
 
