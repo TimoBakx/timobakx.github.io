@@ -27,7 +27,7 @@ parameters and structured results.
 
 The [MCP bundle][_mcp_bundle] from the [Symfony AI project][_symfony_ai] does most of the heavy lifting.
 
-The server itself is configuration:
+First, the bundle itself is configured through the standard Symfony config (I still use yaml):
 
 ```yaml
 mcp:
@@ -46,7 +46,7 @@ mcp:
 ```
 
 
-Each tool is an invokable class with an attribute:
+Then, each tool is an invokable class with an attribute:
 
 ```php
 #[McpTool(
